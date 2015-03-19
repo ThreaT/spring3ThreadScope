@@ -1,14 +1,13 @@
 package slm.abdennour.springcore;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args ){
-        ((Cv)new ClassPathXmlApplicationContext("ctx.xml").getBean("tests")).display() ;
+public class App {
+
+    @Autowired
+    private static Cv tests;
+
+    public static void main(String[] args) {
+        tests.display();
     }
 }
